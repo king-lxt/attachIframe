@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul,
+			li {
+				list-style: none;
+				cursor: pointer;
+			}
+			
+			#container {
+				position: relative;
+				top: 0;
+			}
+			
+			ul.ul {
+				width: 100%;
+				height: 30px;
+			}
+			
+			.ul li {
+				float: left;
+				padding: 0 10px;
+			}
+			
+			.div {
+				position: absolute;
+				top: 50px;
+				display: none;
+				width: 300px;
+				height: 300px;
+				border: 1px solid #aaa;
+			}
+			
+			.active {
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<ul class="ul">
+				<li class="baidu">百度2</li>
+				<li class="jingdong">京东</li>
+				<li class="taobao">淘宝</li>
+			</ul>
+			<div class='div active' id="baidu">百度</div>
+			<div class='div' id="jingdong">京东</div>
+			<div class='div' id="taobao">淘宝</div>
+		</div>
+		<div>
+			<ul>
+				<li><a class="a" href="https://www.baidu.com">百度1</a></li>
+			</ul>
+		</div>
+
+		<script src="js/jquery.js"></script>
+		<script>
+			$(".ul li").click(function() {
+				var eqs = $(this).index();
+				$("#container .div").removeClass("active");
+				$("#container .div").eq(eqs).addClass("active");
+				history.pushState(state, a, url);
+			})
+			
+			var a = 1;
+			if(a){
+				
+			}
+		</script>
+	</body>
+
+</html>
